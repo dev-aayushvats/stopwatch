@@ -1,47 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stopwatch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="sw">
         <h2 class="watch">00:00:00</h2>
-        <button onclick="stop()">Stop</button>
-        <button onclick="start()">Play</button>
-        <button onclick="reset()">Reset</button>
+        <div class="controls">
+            <button onclick="stop()" class="stopb"><img src="https://static.thenounproject.com/png/4909456-200.png" alt=""></button>
+            <button onclick="start()" class="playb"><img
+                    src="https://cdn.pixabay.com/photo/2016/02/01/12/33/play-1173551_1280.png" alt=""></button>
+            <button onclick="reset()" class="resetb"><img src="https://cdn-icons-png.flaticon.com/512/2618/2618245.png" alt=""></button>
+        </div>
     </div>
-    
 
-    <script>
-        let hours = 0;
-        let mins = 0;
-        let secs = 0;
 
-        const watch = document.querySelector(".watch");
-        let timer;
-        const start = () => {{
-            timer = setInterval(()=>{
-                secs++;
-                if(secs>59){
-                    mins++;
-                    secs=0;
-                }
-                if(mins>59){
-                    hours++;
-                    mins=0;
-                }
-                watch.innerHTML = hours + ":" + mins + ":" + secs;
-            }, 1000)
-        }}
-        const stop = () => {
-            clearInterval(timer);
-        }
-        const reset = () => {
-            clearInterval(timer);
-            watch.innerHTML = "00:00:00"
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
+
 </html>
